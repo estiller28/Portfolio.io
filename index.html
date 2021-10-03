@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/js/vue.js"></script>
+    <title>Daniel Estiller</title>
+</head>
+<body>
+  <header class="l-header">
+    <div class="nav bd-grid">
+      <a href="#" class="nav__logo">Dan<span class="logo__style">Stiller</span></a>
+   
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#"class="nav__link active">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+   
+      <div class="nav__toggle" >
+        <i class='bx bx-menu' id="nav-toggle"></i>
+      </div>
+    </div>
+  </header>
+
+  <section class="home section" id="home">
+    <div class="home__data bd-grid">
+      <div class="home__data">
+        <h1 class="home__title">Hi, <br>I am <span class="title-color">Daniel</span><br>Web Developer</h1>
+        <a href="#contact" class="button">Contact</a>
+
+        <div class="home__social">
+          <div class="home__social-icon">
+           <i class='bx bxl-facebook-square'></i>
+          </div>
+          <div class="home__social-icon">
+            <i class='bx bxl-linkedin-square'></i>
+          </div>
+          <div class="home__social-icon">
+            <i class='bx bxl-github' ></i>
+          </div>
+          <di class="home__social-icon">
+            <i class='bx bxl-instagram' ></i>
+          </di>
+        </div>
+      </div>
+
+      <div class="home__img">
+        <img class="home-img" src="assets/img/dan.png" alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about" class="section">
+    <h2 class="section-title">About</h2>
+     <div class="about__container bd-grid">
+       <div class="about__img">
+         <img src="assets/img/me.jpg"  alt="">  
+       </div>
+       <div class="about__text">
+         <h2 class="about__subtitle">Hi, <span class="title-color">I am</span>  Daniel Estiller</h2>
+         <li class="about__me"><span class="about__icon"> </span> 21 years of Age</li>
+         <li class="about__me">Computer Tech</li>
+         <li class="about__me">Junior Front-Developer</li>
+       </div>
+     </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+    
+    <div class="skills__subtitle bd-grid"><h2>Front-<span class="title-color">End</span> Development</h2></div>
+    <div class="skills__container bd-grid">
+      <div class="skills__data">
+       <div class="skills__names"><span class="skills__icon"><i class='bx bxl-html5'></i></span> HTML</div>
+        <div class="skills__percentage">70%</div>
+         <div class="skills__bar skills__html"></div>
+      </div>
+
+      <div class="skills__data">
+        <div class="skills__names"> <span class="skills__icon"><i class='bx bxl-css3' ></i></span> CSS</div>
+         <div class="skills__percentage">60%</div>
+          <div class="skills__bar skills__html"></div>
+       </div>
+       
+       <div class="skills__data">
+        <div class="skills__names"> <span class="skills__icon"><i class='bx bxl-javascript' ></i></span> JS</div>
+         <div class="skills__percentage">40%</div>
+          <div class="skills__bar skills__html"></div>
+       </div>
+
+       <div class="skills__data">
+        <div class="skills__names"> <span class="skills__icon"><i class='bx bx-paint' ></i></span> UI/UX</div>
+         <div class="skills__percentage">40%</div>
+          <div class="skills__bar skills__html"></div>
+       </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <h2 class="section-title">Work</h2>
+    <div class="work__container bd-grid">
+     <div class="work__img">
+       <img src="assets/img/work1.jpg" alt="" class="work-img">
+     </div>
+     <div class="work__img">
+      <img src="assets/img/work2.jpg" alt="" class="work-img">
+    </div>
+    <div class="work__img">
+      <img src="assets/img/work3.jpg" alt="" class="work-img">
+    </div>
+    <div class="work__img">
+      <img src="assets/img/work4.jpg" alt="" class="work-img">
+    </div>
+    <div class="work__img">
+      <img src="assets/img/work5.jpg" alt="" class="work-img">
+    </div>
+    <div class="work__img">
+      <img src="assets/img/work6.jpg" alt="" class="work-img">
+    </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="bd-grid">
+      <div class="contact__container">
+        <div class="contact__form" id="app">
+          <div class="errorMessage" :class="[active ? 'visible' : 'hidden']" >*Required</div>
+            <input v-model="name" type="text" class="contact__input"  placeholder="Name">
+            <div class="errorMessage" :class="[active ? 'visible' : 'hidden']" >*Required</div>
+            <textarea v-model="concern"  class="contact__input" name="" id="" cols="30" rows="10" placeholder="Concerns"></textarea>
+          <button  @click="validate" class="contact__button">Submit</button>
+        </div>  
+      </div>
+     
+    </div>
+  </section>
+
+  <section class="footer section" id="footer">
+   <h2 class="footer__title">Stiller</h2>
+    <div class="footer__social">
+      <i class='bx bxl-twitter footer__icon'></i>
+      <i class='bx bxl-whatsapp footer__icon' ></i>
+      <i class='bx bxl-messenger footer__icon' ></i>
+    </div>
+    <p class="footer__text">Daniel Estiller &copy; 2021 All rights reserved.</p>
+  </section>
+</body>
+<script src="assets/js/app.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+</html>
